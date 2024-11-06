@@ -1,0 +1,27 @@
+<!-- templates/view_players.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选手列表</title>
+</head>
+<body>
+    <h1>选手列表</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>名字</th>
+            <th>邮箱</th>
+        </tr>
+        {% for player in players %}
+        <tr>
+            <td>{{ player.id }}</td>
+            <td>{{ player.name }}</td>
+            <td>{{ player.email }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'index' %}">返回</a>
+</body>
+</html>

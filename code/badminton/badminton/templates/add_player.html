@@ -1,0 +1,20 @@
+<!-- templates/add_player.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加选手</title>
+</head>
+<body>
+    <h1>添加选手</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="选手名字" required>
+        <input type="number" name="age" placeholder="年龄" required>
+        <input type="email" name="email" placeholder="选手邮箱" required>
+        <button type="submit">添加</button>
+    </form>
+    <a href="{% url 'index' %}">返回</a>
+</body>
+</html>

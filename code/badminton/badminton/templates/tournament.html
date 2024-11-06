@@ -1,0 +1,24 @@
+<!-- templates/tournament.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>当前比赛轮次</title>
+</head>
+<body>
+    <h1>第 {{ round }} 轮比赛</h1>
+    <h2>比赛对阵:</h2>
+    <ul>
+        {% for match in matches %}
+            <li>{{ match.0 }} vs {{ match.1 }}</li>
+        {% endfor %}
+    </ul>
+    <form action="{% url 'next_round' %}" method="get">
+        <button type="submit">开始下一轮</button>
+    </form>
+    <form action="{% url 'reset_tournament' %}" method="get">
+        <button type="submit">返回</button>
+    </form>
+</body>
+</html>
